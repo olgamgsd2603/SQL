@@ -1,0 +1,27 @@
+2.Вывести название и стоимость товаров от 20 до 200 EUR.
+SELECT ProductName,
+       Price
+FROM [Products]
+WHERE Price >= 20
+	AND
+	Price <= 200
+3. Вывести товары от поставщиков 2 и 4 в порядке убывания цены.
+SELECT *
+FROM [Products]
+WHERE SupplierID IN (2,4)
+ORDER BY SupplierID DESC
+4.Вывести товары, добавив поле "ценасоскидкой" в 12.5%.
+SELECT
+	ProductName,
+    Price,
+    Price * .875 AS Price_low
+FROM Products
+5.	У поставщиков 3 и 5 изменить тел/номера на произвольные значения.
+
+UPDATE Suppliers
+SET
+	Phone='123456789'AND
+            Phone='987654321'
+WHERE
+	SupplierID=3 AND
+            SupplierID=5
